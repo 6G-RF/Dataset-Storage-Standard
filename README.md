@@ -9,6 +9,12 @@ Component overview:
 
 ## Data Acquisition System
 
+### Types
+
+- SDR: software-defined radio
+- ADC/DAC: raw ADC/DAC measurement device
+- VNA
+
 ```yaml
 define &B210:
   name: "B210"
