@@ -6,6 +6,7 @@ Component overview:
 - Measurement Scenarios
 - Data Acquisition System
 - Datasets
+- Storage Location (URL/local)
 
 ## Data Acquisition System
 
