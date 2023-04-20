@@ -23,7 +23,7 @@ define &B210:
   max_freq: 5E9
   min_BW: 250E3
   max_BW: 40E6
-  num_sensors: 2 
+  num_channels: 2 
 ```
 
 ## Testbed Description file
