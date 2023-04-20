@@ -6,11 +6,12 @@ Component overview:
 - Measurement Scenarios
 - Datasets
 
-## Software defined radios
+## Data Acquisition System
 
 ```yaml
 define &B210:
   name: "B210"
+  type: "SDR"
   min_freq: 70E6
   max_freq: 5E9
   min_BW: 250E3
@@ -32,6 +33,6 @@ define &Techtile:
     - [0,0,1]
   antenna_loc_unit: "m" # unit used for antenna locations
   level: "L3" # Level of testbed
-  software_define_radio:
+  daq:
     <<: *B210
 ```
