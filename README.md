@@ -39,6 +39,9 @@ define &B210:
 
 ## Testbed Description file
 
+While not required, we suggest adding your testbed description files in [the following repository](https://github.com/6G-Testbeds/Testbed-Description-Files).
+Below are some examples and the YAML schema to make your own testbed description file.
+
 ```yaml
 define &Techtile:
   name: "Techtile"
