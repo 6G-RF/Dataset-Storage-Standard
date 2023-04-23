@@ -18,7 +18,7 @@ Component overview:
 - Datasets
 - Storage Location (URL/local)
 
-## Data Acquisition System
+## Data Sources
 
 ### Types
 
@@ -42,19 +42,4 @@ define &B210:
 While not required, we suggest adding your testbed description files in [the following repository](https://github.com/6G-Testbeds/Testbed-Description-Files).
 Below are some examples and the YAML schema to make your own testbed description file.
 
-```yaml
-define &Techtile:
-  name: "Techtile"
-  descrption: "Small description"
-  url: "https://github.com/techtile-by-dramco"
-  num_rx_antennas: 280 # how many antennas can be used in RX mode
-  num_tx_antennas: 280 # how many antennas can be used in TX mode
-  num_antennas: 280 # how many physical/virtual antennas can be used
-  antennal_loc: # physical location of each antenna element (relative to the first antenna element) [x,y,z]
-    - [0,0,0]
-    - [0,0,1]
-  antenna_loc_unit: "m" # unit used for antenna locations
-  level: "L3" # Level of testbed
-  daq:
-    <<: *B210
-```
+
