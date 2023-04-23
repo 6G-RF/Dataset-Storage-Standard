@@ -1,0 +1,10 @@
+```yaml
+define &B210:
+  name: "B210"
+  type: "SDR"
+  min_freq: 70E6
+  max_freq: 5E9
+  min_BW: 250E3
+  max_BW: 40E6
+  num_channels: 2 
+```
