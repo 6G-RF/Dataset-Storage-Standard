@@ -1,5 +1,15 @@
 # Dataset Storage Interface
 
+## Summary 
+This repository contains the description of a data storage interface in order to store and retrieve data in a standardized manner. 
+It is intantionated primairily in the context of data storage of RF channel sounding, RF simulations, acoustic experiments, in order to conviently store, exchange and access the experiment data.
+
+### What is it
+
+### What is it not
+
+## Interface Description
+
 Component overview:
 - Testbeds
 - Environments
