@@ -72,3 +72,6 @@ Based on the start time and the sampling rate, these timestamp can be generated.
 If the user is fixed during the scenario, it should be included in the scenario descpription, otherwise it can be included in the dataset. 
 
 The dataset is stored in a HDF5 to keep interoperability with a range of programming languages.
+
+All metatadata required to interpret the dataset needs to be included in the dataset file.
+Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictonary.
