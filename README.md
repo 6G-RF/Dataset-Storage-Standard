@@ -70,3 +70,5 @@ data source | data | channel (optional) | timestamp (optional) | position (optio
 The datatypes should be infered from the dataset. The timestamp could be infered from the start_time in the experiment description file, but this is not required.
 Based on the start time and the sampling rate, these timestamp can be generated. The channel dimension indicates which channel of the data source is used. For example, some software-defined-radios have multiple rx chains on the same SDR board, each RX chain is seen as a seperate channel. The position of the user can be included in the dataset or in the scenario file depending.
 If the user is fixed during the scenario, it should be included in the scenario descpription, otherwise it can be included in the dataset. 
+
+The dataset is stored in a HDF5 to keep interoperability with a range of programming languages.
