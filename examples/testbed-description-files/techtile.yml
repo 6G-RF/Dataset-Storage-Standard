@@ -1,4 +1,3 @@
-```yaml
 define &Techtile:
   name: "Techtile"
   descrption: "Small description"
@@ -13,4 +12,4 @@ define &Techtile:
   level: "L3" # Level of testbed
   daq:
     <<: *B210
-```
+
