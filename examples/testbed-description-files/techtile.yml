@@ -3,7 +3,7 @@ define &Techtile:
   descrption: "Small description"
   url: "https://github.com/techtile-by-dramco"
   level: "L3" # Level of testbed
-  - data_sources:
+  data_sources:
     # for Techtile we have currently SDR and DAC/ADC sources
     - source:
         <<: *B210
@@ -12,8 +12,6 @@ define &Techtile:
         - [0,0,0]
         - [0,0,1]
       loc_unit: "m" # unit used for antenna location
-     - source:
+    - source:
         <<: *DAQ
-       num_sources: 192
-       
-
+      num_sources: 192
