@@ -91,7 +91,7 @@ scenarios = experiment.get_scenarios()
 for sc in scenarios:
     grouped_ds = sc.get_ds().groupby("position")
     for ds in grouped_ds:
-     utils.plot_pdp(ds)
+        utils.plot_pdp(ds)
 ```
 
 ## Uses of the DSS
