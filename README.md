@@ -80,8 +80,18 @@ All metatadata required to interpret the dataset needs to be included in the dat
 Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictonary.
 
 ## API
+
+Example usages:
+
+### Plot the PDP for each user position
 ```python
 experiment = load("meas.yml")
+scenarios = experiment.get_scenarios()
+
+for sc in scenarios:
+    grouped_ds = sc.get_ds().groupby("position")
+    for ds in grouped_ds:
+     utils.plot_pdp(ds)
 ```
 
 ## Uses of the DSS
