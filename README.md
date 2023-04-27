@@ -1,4 +1,4 @@
-# Dataset Storage Interface
+# Dataset Storage Standard
 
 ## Summary 
 This repository contains the description of a data storage interface in order to store and retrieve data in a standardized manner. 
