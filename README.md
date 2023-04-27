@@ -13,12 +13,13 @@ The standard exists of human-readable files (YAML) describing the testbed and ex
 ## Interface Description
 
 Component overview:
-- Testbeds
-- Environments
-- Measurement Scenarios
-- Data Acquisition System
+- Environments (description)
+- Testbed (description)
+- Experiment (description)
+- Data Source (description)
 - Datasets
-- Storage Location (URL/local)
+- API
+  * Storage Location (URL/local)
 
 ## Data Sources
 
