@@ -79,7 +79,13 @@ The dataset is stored in a HDF5 to keep interoperability with a range of program
 All metatadata required to interpret the dataset needs to be included in the dataset file.
 Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictonary.
 
-
+## API
+```python
+experiment = load("meas.yml")
+```
 
 ## Uses of the DSS
 -
+
+
+
