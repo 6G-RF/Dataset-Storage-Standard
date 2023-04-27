@@ -1,8 +1,10 @@
-# Dataset Storage Standard
+# Dataset Storage Standard (DSS)
 
 ## Summary 
-This repository contains the description of a data storage interface in order to store and retrieve data in a standardized manner. 
-It is intantionated primairily in the context of data storage of RF channel sounding, RF simulations, acoustic experiments, in order to conviently store, exchange and access the experiment data.
+This repository contains the description of a data storage standard in order to store and retrieve data in a standardized manner. 
+It is intantionated primairily in the context of data storage of RF channel sounding, RF simulations, acoustic experiments, in order to conviently store, exchange and access data.
+
+The standard exists of human-readable files (YAML) describing the testbed and experiments, and a common data storage format.
 
 ### What is it
 
@@ -62,9 +64,9 @@ per scenario described in the experiment description file, a new data set is sto
 
 ## Dataset
 
-A simple data set structure is used to store the data of a specific experiment scenario, with the following dimensions:
+A simple data set structure is used to store the data of a specific experiment scenario. A tensor is used with the following dimensions:
 ```
-data source | data | channel (optional) | timestamp (optional) | position (optional)
+data source | data | channel (optional) | timestamp (optional) | user (optional) | position (optional)
 ```
 
 The datatypes should be infered from the dataset. The timestamp could be infered from the start_time in the experiment description file, but this is not required.
@@ -75,3 +77,8 @@ The dataset is stored in a HDF5 to keep interoperability with a range of program
 
 All metatadata required to interpret the dataset needs to be included in the dataset file.
 Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictonary.
+
+
+
+## Uses of the DSS
+-
