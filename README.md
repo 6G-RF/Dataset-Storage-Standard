@@ -79,6 +79,19 @@ The dataset is stored in a HDF5 to keep interoperability with a range of program
 All metatadata required to interpret the dataset needs to be included in the dataset file.
 Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictonary.
 
+```python
+# example pseudoscript to conform to DSS
+
+# iq_data: a 4D numpy array of complex32 IQ data with dimensions, PxSxCxT (P being the number of positions, S the number of data sources, C the number of channels and T the sequence length)
+# postions: 1D list of positions of length P
+# start_time: time when the measurement started according the the experiment description
+# sampling_rate: according the the experiment description
+
+ds = xr.Dataset(dict(data={["data_source", "channels", "data"], iq_data}), coords=dict(start_time=start_time, position=)) #not finished
+    
+
+```
+
 ## API
 
 Example usages:
