@@ -35,6 +35,13 @@ A number of files are required in order to interpret and explain a conducted exp
 - ADC/DAC: raw ADC/DAC measurement device
 - VNA
 
+#### SDR configuration parameters
+Partially based on SigMF and NI RF Data Recording API.
+
+| Parameter | Type | Default | Description |
+|--------|--------|--------|--------|
+RFmode | string | TX| TX or RX|
+
 ```yaml
 define &B210:
   name: "B210"
