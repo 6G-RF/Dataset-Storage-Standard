@@ -2,7 +2,7 @@
 
 ## Summary 
 This repository contains the description of a data storage standard in order to store and retrieve data in a standardized manner. 
-It is instantionated primarily in the context of data storage of RF channel sounding, RF simulations, acoustic experiments, in order to conveniently store, exchange and access data.
+It is instantiated primarily in the context of data storage of RF channel sounding, RF simulations, acoustic experiments, in order to conveniently store, exchange and access data.
 
 The standard exists of human-readable files (YAML) describing the testbed and experiments, and a common data storage format.
 
