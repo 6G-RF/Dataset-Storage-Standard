@@ -2,7 +2,7 @@
 
 ## Summary 
 This repository contains the description of a data storage standard in order to store and retrieve data in a standardized manner. 
-It is intantionated primairily in the context of data storage of RF channel sounding, RF simulations, acoustic experiments, in order to conviently store, exchange and access data.
+It is instantionated primarily in the context of data storage of RF channel sounding, RF simulations, acoustic experiments, in order to conveniently store, exchange and access data.
 
 The standard exists of human-readable files (YAML) describing the testbed and experiments, and a common data storage format.
 
@@ -12,6 +12,10 @@ The standard exists of human-readable files (YAML) describing the testbed and ex
 
 ## Interface Description
 
+The standard is divided in human-readable files, describing the testbed and experiments, a data storage format and an API. These are illustrated below:
+
+![DSS Reference Architecture](docs/figures/overview-dss.png "DSS Reference Architecture")
+
 Component overview:
 - Environments (description)
 - Testbed (description)
@@ -20,6 +24,8 @@ Component overview:
 - Datasets
 - API
   * Storage Location (URL/local)
+
+A number of files are required in order to interpret and explain a conducted experiment. The files are structures such that reuse is possible among different experiments and testbeds. For instance, a data source can describe an SDR, as well as a DAQ system. A testbed exists out of several data sources. An experiment can make use of an environment file. The latter describes, e.g., the room dimensions and 3D scans. The experiment includes the testbeds used, a number of measurements each having different parameters. An example is provided below:
 
 ## Data Sources
 
@@ -65,16 +71,19 @@ per scenario described in the experiment description file, a new data set is sto
 
 ## Dataset
 
-A simple data set structure is used to store the data of a specific experiment scenario. A tensor is used with the following dimensions:
-```
-data source | data | channel (optional) | timestamp (optional) | user (optional) | position (optional)
-```
 
-The datatypes should be infered from the dataset. The timestamp could be infered from the start_time in the experiment description file, but this is not required.
-Based on the start time and the sampling rate, these timestamp can be generated. The channel dimension indicates which channel of the data source is used. For example, some software-defined-radios have multiple rx chains on the same SDR board, each RX chain is seen as a seperate channel. The position of the user can be included in the dataset or in the scenario file depending.
-If the user is fixed during the scenario, it should be included in the scenario descpription, otherwise it can be included in the dataset. 
+The description files are utilized when reading/storing the data in a common format. A simple data set structure is used to store the data\footnote{Note, that we do not impose where the data is stored. } of a specific experiment scenario. A tensor is used with the following dimensions:
+- data source
+- data
+- channel (optional)
+- time (optional)
+- user (optional)
+- positions (optional)
+Each dimension can have a coordinate associated to it, i.e., each dimension can have label-based indexing through coordinates. For example, for each position entry in the tensor, a position, e.g., relative or GNSS-based, can be associated with it.
 
-The dataset is stored in a HDF5 to keep interoperability with a range of programming languages.
+The data types should be inferred from the dataset and is not imposed by the standard. The timestamp could be inferred from the \verb|start_time| in the experiment description file, but this is not required. Based on the start time and the sampling rate, the timestamps can be generated. The channel dimension indicates which channel of the data source is used. For example, some SDR have multiple RX chains on the same SDR board, and each RX chain is seen as a separate channel. The position of the user can be included in the dataset or in the scenario file, depending on the user's mobility, for instance. If the user is fixed during the scenario, it should be included in the scenario description, otherwise, it can be included in the dataset.
+
+The dataset is stored in an HDF5 to keep interoperability with a range of programming languages.
 
 All metatadata required to interpret the dataset needs to be included in the dataset file.
 Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictonary.
