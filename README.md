@@ -36,11 +36,27 @@ A number of files are required in order to interpret and explain a conducted exp
 - VNA
 
 #### SDR configuration parameters
-Partially based on SigMF and NI RF Data Recording API.
+Partially based on SigMF and NI RF Data Recording API. These are the parameters that can be configured in the experiment description file when using SDR data sources.
 
 | Parameter | Type | Default | Description |
 |--------|--------|--------|--------|
-RFmode | string | TX| TX or RX|
+| Opmode | string | TX| Operation mode: TX or RX|
+| freq | float | 1e9 | Target center frequency in Hz|
+| lo_offset | float | 0.0 | LO offset in Hz|
+| sampling_rate | float | 1e6 | Sampling rate in Hz |
+| bandwidth | float | 1e6 | TX analog front-end filter bandwidth in Hz |
+| clock_ref | string | internal | TX sync reference source (internal, external, gpsdo) |
+--
+| tx_gain | float | 0.5 | TX gain |
+| tx_gain_type | string | normalized | dB or normalized |
+| rx_gain | float | 0.5 | RX gain |
+| rx_gain_type | string | normalized | dB or normalized |
+
+### DAC configuration parameters
+| Parameter | Type | Default | Description |
+|--------|--------|--------|--------|
+| Opmode | string | ADC | Operation mode: ADC or DAC|
+| sampling_rate | float | 1e3 | Sampling rate in Hz |
 
 ```yaml
 define &B210:
