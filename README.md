@@ -102,6 +102,7 @@ The description files are utilized when reading/storing the data in a common for
 - time (optional)
 - user (optional)
 - positions (optional)
+
 Each dimension can have a coordinate associated to it, i.e., each dimension can have label-based indexing through coordinates. For example, for each position entry in the tensor, a position, e.g., relative or GNSS-based, can be associated with it.
 
 The data types should be inferred from the dataset and is not imposed by the standard. The timestamp could be inferred from the \verb|start_time| in the experiment description file, but this is not required. Based on the start time and the sampling rate, the timestamps can be generated. The channel dimension indicates which channel of the data source is used. For example, some SDR have multiple RX chains on the same SDR board, and each RX chain is seen as a separate channel. The position of the user can be included in the dataset or in the scenario file, depending on the user's mobility, for instance. If the user is fixed during the scenario, it should be included in the scenario description, otherwise, it can be included in the dataset.
