@@ -90,18 +90,15 @@ scenarios:
    sampling_rate: 10e3
 ```
 
-per scenario described in the experiment description file, a new data set is stored with the samen name as the experiment file including a postfix 01,02,03,...
+per scenario described in the experiment description file, a new data set is stored with the same name as the experiment file including a postfix 01,02,03,...
 
 ## Dataset
 
 
 The description files are utilized when reading/storing the data in a common format. A simple data set structure is used to store the data\footnote{Note, that we do not impose where the data is stored. } of a specific experiment scenario. A tensor is used with the following dimensions:
-- data source
 - data
-- channel (optional)
+ * measurement-type-dependent
 - time (optional)
-- user (optional)
-- positions (optional)
 
 Each dimension can have a coordinate associated to it, i.e., each dimension can have label-based indexing through coordinates. For example, for each position entry in the tensor, a position, e.g., relative or GNSS-based, can be associated with it.
 
@@ -110,7 +107,21 @@ The data types should be inferred from the dataset and is not imposed by the sta
 The dataset is stored in an HDF5 to keep interoperability with a range of programming languages.
 
 All metatadata required to interpret the dataset needs to be included in the dataset file.
-Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictonary.
+Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictionary.
+
+### Measurement Types
+
+#### Channel sounding
+- data
+ * TX index (min. 1)
+  - channel (min. 1) [coordinates position (optional)]
+ * RX index (min. 1) 
+  - channel (min. 1) [coordinates position (optional)]
+ * Delay index (delay and/or frequency needs to be defined) [delay coordinates (optional)]
+ * Frequency index (delay and/or delay needs to be defined) [absolute frequency coordinates (optional)]
+
+The data tensor consists of two dimensions TX and RX data sources. Each data source can exist of additional channel dimensions, which can have a position (coordinate) allocated to it.
+In which mode (TX or RX) the testbed is operating, should be included in the scenario description file.
 
 ```python
 # example pseudoscript to conform to DSS
