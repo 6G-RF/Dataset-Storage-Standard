@@ -97,7 +97,7 @@ per scenario described in the experiment description file, a new data set is sto
 
 The description files are utilized when reading/storing the data in a common format. A simple data set structure is used to store the data\footnote{Note, that we do not impose where the data is stored. } of a specific experiment scenario. A tensor is used with the following dimensions:
 - data
- * measurement-type-dependent
+   * measurement-type-dependent
 - time (optional)
 
 Each dimension can have a coordinate associated to it, i.e., each dimension can have label-based indexing through coordinates. For example, for each position entry in the tensor, a position, e.g., relative or GNSS-based, can be associated with it.
@@ -114,9 +114,9 @@ Example, in xarray the `attrs` could contain the serialized yaml files as an ord
 #### Channel sounding
 - data
  * TX index (min. 1)
-  - channel (min. 1) [coordinates position (optional)]
+   - channel (min. 1) [coordinates position (optional)]
  * RX index (min. 1) 
-  - channel (min. 1) [coordinates position (optional)]
+   - channel (min. 1) [coordinates position (optional)]
  * Delay index (delay and/or frequency needs to be defined) [delay coordinates (optional)]
  * Frequency index (delay and/or delay needs to be defined) [absolute frequency coordinates (optional)]
 
