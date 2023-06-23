@@ -106,7 +106,7 @@ The data types should be inferred from the dataset and is not imposed by the sta
 
 The dataset is stored in an HDF5 to keep interoperability with a range of programming languages.
 
-All metatadata required to interpret the dataset needs to be included in the dataset file.
+All metadata required to interpret the dataset needs to be included in the dataset file.
 Example, in xarray the `attrs` could contain the serialized yaml files as an ordered dictionary.
 
 ### Measurement Types
