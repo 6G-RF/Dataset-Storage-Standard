@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+title: "Dataset Storage Standard"
+version: 1.0.0
+date-released: 2023-08-30
+url: "https://github.com/6G-Testbeds/Dataset-Storage-Standard"
